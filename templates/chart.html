@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3a: Stock Data Visualizer (jn4gz)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        object {
+            width: 80%;
+            max-width: 800px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <object data="{{url_for('static', filename='stock_chart.svg')}}" type="image/svg+xml"></object>
+
+    <button id="returnToForm">Return Back to Form Page</button>
+    <script>
+        document.getElementById('returnToForm').onclick = function() {
+            window.location.href = "{{url_for('index')}}";
+        }
+    </script>
+</body>
+</html>
